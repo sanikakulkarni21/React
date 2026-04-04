@@ -36,7 +36,7 @@ class ListEmployeeComponent extends React.Component {
 
     }
 
-    componntDidMount(){
+    componentDidMount(){
         //dont call rest api call here
         //but get the data from employeeService
         EmployeeService.getEmployees().then((res)=>{

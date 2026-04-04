@@ -1,26 +1,29 @@
-
 import axios from 'axios';
 
-const EMPLOYEE_APP_BASE_URL="http://localhost:8080/employees";
+const EMPLOYEE_APP_BASE_URL = "http://localhost:5283/api/employees/get";
 
-class EmployeeService{
+class EmployeeService {
 
-    getEmployees(){
+    getEmployees() {
         return axios.get(EMPLOYEE_APP_BASE_URL);
     }
-    createEmployee(){
-        return axios.post(EMPLOYEE_APP_BASE_URL)
+
+    createEmployee(employee) {
+        return axios.post(EMPLOYEE_APP_BASE_URL, employee);
     }
-    getEmployeeById(employeeId){
+
+    getEmployeeById(employeeId) {
         return axios.get(EMPLOYEE_APP_BASE_URL + "/" + employeeId);
     }
-    updateEmployee(employee, employeeId){
+
+    updateEmployee(employee, employeeId) {
         return axios.put(EMPLOYEE_APP_BASE_URL + "/" + employeeId, employee);
     }
-    deleteEmployee(employeeId){
+
+    deleteEmployee(employeeId) {
         return axios.delete(EMPLOYEE_APP_BASE_URL + "/" + employeeId);
     }
+}
 
-
-} export default EmployeeService;
-
+// ✅ THIS LINE FIXES YOUR ERROR
+export default new EmployeeService();
