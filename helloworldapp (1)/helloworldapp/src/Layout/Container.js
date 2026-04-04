@@ -12,6 +12,7 @@ import Cart from '../ShoppingCart/Cart';
 import Home from './Home';
 import Contact from './Contact';
 import About from './About';
+import ListEmployeeComponent from '../Hr/Employees';
 
 
 
@@ -28,7 +29,9 @@ function BasicRouting() {
         <Link to="/Register">Register</Link>|
         <Link to="/Flowers">List</Link>|
         <Link to="/Cart">My Shopping Cart</Link> |
-        <Link to="/About">About Us</Link>
+        <Link to="/About">About Us</Link>|
+        <Link to="/Employees">Employees</Link>
+       
 
 
         <hr />
@@ -48,6 +51,8 @@ function BasicRouting() {
            <Route path="/Login" element={<Login />} />
            <Route path="/Cart" element={<Cart />} />
            <Route path="/About" element={<About />} />
+           <Route path="/Employees" element={<ListEmployeeComponent />} />
+           
 
         </Routes>
 
